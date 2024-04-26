@@ -1,0 +1,35 @@
+<script>
+function loop() {
+	
+    function calculateBalance(v, d) {
+		return v - d;
+	}
+
+	function calculateLevel(balance) {
+		let result;
+		
+		if ( balance <= 10) result = "Ferro";
+		else if ( balance > 10 && balance <= 20) result = "Bronze";
+		else if ( balance > 20 && balance <= 50) result = "Prata";
+		else if ( balance > 50 && balance <= 80) result = "Ouro";
+		else if ( balance > 80 && balance <= 90) result = "Diamante";
+		else if ( balance > 90 && balance <= 100) result = "Lendário";
+		else result = "Imortal";
+		
+		return result;
+	}
+	
+	let victory = prompt("Digite a quantidade de vitórias:");
+	let defeat = prompt("Digite a quantidade de derrotas:");
+	
+	let balance = calculateBalance(victory,defeat);
+	let level = calculateLevel(balance);
+
+	console.log("O Herói tem saldo de " + balance + " vitórias e está no nível de " + level + ".");
+	alert("O Herói tem saldo de " + balance + " vitórias e está no nível de " + level + ".");
+
+	setTimeout(loop, 30);
+}
+
+loop();
+</script>
